@@ -22,11 +22,36 @@
 // let totalPerPerson = total / people
 // alert(`Each person should pay ${totalPerPerson}`)
 //Checking for odd or even digit
-let enterDigit = prompt("Enter your digit here")
-if(enterDigit % 2 == 0)
-{
-console.log("This is even digit")
-}
-else {
-    console.log("This is odd")
+// let enterDigit = prompt("Enter your digit here")
+// if(enterDigit % 2 == 0)
+// {
+// console.log("This is even digit")
+// }
+// else {
+//     console.log("This is odd")
+// }
+let height = prompt("Enter your height in cm");
+let totalPrice = 0;
+
+if (height >= 120){
+    console.log("You can ride the rollercoaster!");
+    let age = prompt("Enter your age");
+    if (age >= 18){
+        totalPrice = 90;
+    } else if (age >= 12){
+       totalPrice = 70;
+    } else {
+       totalPrice = 50;
+    }
+    
+    let photo = prompt("Do you want to buy a photo? type yes or no");
+    if (photo === "yes") {
+        if(age < 65){
+            totalPrice += 25
+        }
+    }
+    alert("Your current price is " + totalPrice + " kr")
+
+} else {
+    console.log("Sorry, you are too short!");
 }
