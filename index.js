@@ -30,28 +30,88 @@
 // else {
 //     console.log("This is odd")
 // }
-let height = prompt("Enter your height in cm");
-let totalPrice = 0;
+// let height = prompt("Enter your height in cm");
+// let totalPrice = 0;
 
-if (height >= 120){
-    console.log("You can ride the rollercoaster!");
-    let age = prompt("Enter your age");
-    if (age >= 18){
-        totalPrice = 90;
-    } else if (age >= 12){
-       totalPrice = 70;
-    } else {
-       totalPrice = 50;
-    }
+// if (height >= 120){
+//     console.log("You can ride the rollercoaster!");
+//     let age = prompt("Enter your age");
+//     if (age >= 18){
+//         totalPrice = 90;
+//     } else if (age >= 12){
+//        totalPrice = 70;
+//     } else {
+//        totalPrice = 50;
+//     }
     
-    let photo = prompt("Do you want to buy a photo? type yes or no");
-    if (photo === "yes") {
-        if(age < 65){
-            totalPrice += 25
-        }
-    }
-    alert("Your current price is " + totalPrice + " kr")
+//     let photo = prompt("Do you want to buy a photo? type yes or no");
+//     if (photo === "yes") {
+//         if(age < 65){
+//             totalPrice += 25
+//         }
+//     }
+//     alert("Your current price is " + totalPrice + " kr")
 
-} else {
-    console.log("Sorry, you are too short!");
+// } else {
+//     console.log("Sorry, you are too short!");
+// }
+// function extractYearFromDate(dateString) {
+
+//     let limitInput = dateString.substring(0, 10);//Not sure if that is correct though?
+//     if (limitInput.length !== 10) {
+//         alert('Input must be exactly 10 characters long.');
+//       }
+//       else if (limitInput.length > 10){
+//         alert('Input must be exactly 10 characters long.')
+//       }
+
+//     return dateString.substring(0, 4);
+//   }
+//   console.log(extractYearFromDate);
+ 
+//   let dateExample = prompt("Enter your date in the following format YYYY-MM-DD");
+//   let extractedYear = extractYearFromDate(dateExample);
+//   console.log(`The year extracted is: ${extractedYear}`);
+function addition(x, y) {
+    return x + y;
+  }
+  
+  function subtraction(x, y) {
+    return x - y;
+  }
+  
+  function multiplication(x, y) {
+    return x * y;
+  }
+  
+  function division(x, y) {
+    return x / y;
+  }
+  
+  function calculation(operator, x, y) {
+    switch (operator) {
+      case "+":
+        return add(x, y);
+      case "-":
+        return subtract(x, y);
+      case "*":
+        return multiply(x, y);
+      case "/":
+        return divide(x, y);
+  }
 }
+ 
+    let operator = prompt("Enter an operator (+, -, *, /):");
+    let num1 = prompt("Enter the first number:");
+    let num2 = prompt("Enter the second number:");
+  
+    // Convert input to numbers and check if they are valid
+    // num1 = parseFloat(num1);
+    // num2 = parseFloat(num2);
+  
+    // if (isNaN(num1) || isNaN(num2)) {
+    //   throw new Error("Invalid input. Please enter valid numbers.");
+    // }
+  
+    let result = calculate(operator, num1, num2);
+    console.log("Result + ", result);
