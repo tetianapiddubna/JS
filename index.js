@@ -72,38 +72,38 @@
 //   let dateExample = prompt("Enter your date in the following format YYYY-MM-DD");
 //   let extractedYear = extractYearFromDate(dateExample);
 //   console.log(`The year extracted is: ${extractedYear}`);
-function addition(x, y) {
-    return x + y;
-  }
+// function addition(x, y) {
+//     return x + y;
+//   }
   
-  function subtraction(x, y) {
-    return x - y;
-  }
+//   function subtraction(x, y) {
+//     return x - y;
+//   }
   
-  function multiplication(x, y) {
-    return x * y;
-  }
+//   function multiplication(x, y) {
+//     return x * y;
+//   }
   
-  function division(x, y) {
-    return x / y;
-  }
+//   function division(x, y) {
+//     return x / y;
+//   }
   
-  function calculation(operator, x, y) {
-    switch (operator) {
-      case "+":
-        return add(x, y);
-      case "-":
-        return subtract(x, y);
-      case "*":
-        return multiply(x, y);
-      case "/":
-        return divide(x, y);
-  }
-}
+//   function calculation(operator, x, y) {
+//     switch (operator) {
+//       case "+":
+//         return add(x, y);
+//       case "-":
+//         return subtract(x, y);
+//       case "*":
+//         return multiply(x, y);
+//       case "/":
+//         return divide(x, y);
+//   }
+// }
  
-    let operator = prompt("Enter an operator (+, -, *, /):");
-    let num1 = prompt("Enter the first number:");
-    let num2 = prompt("Enter the second number:");
+    // let operator = prompt("Enter an operator (+, -, *, /):");
+    // let num1 = prompt("Enter the first number:");
+    // let num2 = prompt("Enter the second number:");
   
     // Convert input to numbers and check if they are valid
     // num1 = parseFloat(num1);
@@ -113,5 +113,29 @@ function addition(x, y) {
     //   throw new Error("Invalid input. Please enter valid numbers.");
     // }
   
-    let result = calculate(operator, num1, num2);
-    console.log("Result + ", result);
+    // let result = calculate(operator, num1, num2);
+    // console.log("Result + ", result);
+//    let guestList = ["Alla", "Ola", "Tania", "Pasha", "Oksana", "Anna", "Andrew"];
+//    let nameToCheck = "Alla";
+//    if (guestList.includes(nameToCheck)){
+//     console.log(`Welcome, ${nameToCheck}`)
+//    }
+//    else {
+//     console.log(`Name is not there`)
+//    }
+function getRandomName(names) {
+
+    let namesArray = names.split(', ');
+
+    let randomIndex = Math.floor(Math.random() * namesArray.length);
+
+    let selectedName = namesArray[randomIndex];
+
+    return selectedName;
+}
+
+
+let inputNames = prompt("Enter your names one after another");
+let selectedPerson = getRandomName(inputNames);
+console.log(`${selectedPerson} will pay for everybody's food bill.`);
+
