@@ -123,19 +123,26 @@
 //    else {
 //     console.log(`Name is not there`)
 //    }
-function getRandomName(names) {
+// function getRandomName(names) {
 
-    let namesArray = names.split(', ');
+//     let namesArray = names.split(', ');
 
-    let randomIndex = Math.floor(Math.random() * namesArray.length);
+//     let randomIndex = Math.floor(Math.random() * namesArray.length);
 
-    let selectedName = namesArray[randomIndex];
+//     let selectedName = namesArray[randomIndex];
 
-    return selectedName;
+//     return selectedName;
+// }
+
+
+// let inputNames = prompt("Enter your names one after another");
+// let selectedPerson = getRandomName(inputNames);
+// console.log(`${selectedPerson} will pay for everybody's food bill.`);
+const names= ["Alaa", "Pasha", "Olha", "Anna", "Tania", "Andrew"]
+for (const name of names) {
+    console.log("Hello", name);
 }
-
-
-let inputNames = prompt("Enter your names one after another");
-let selectedPerson = getRandomName(inputNames);
-console.log(`${selectedPerson} will pay for everybody's food bill.`);
-
+const Str = "Sweden"
+for (const char of Str) {
+    console.log(char);
+}
