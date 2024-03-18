@@ -138,11 +138,57 @@
 // let inputNames = prompt("Enter your names one after another");
 // let selectedPerson = getRandomName(inputNames);
 // console.log(`${selectedPerson} will pay for everybody's food bill.`);
-const names= ["Alaa", "Pasha", "Olha", "Anna", "Tania", "Andrew"]
-for (const name of names) {
-    console.log("Hello", name);
+// const names= ["Alaa", "Pasha", "Olha", "Anna", "Tania", "Andrew"]
+// for (const name of names) {
+//     console.log("Hello", name);
+// }
+// const Str = "Sweden"
+// for (const char of Str) {
+//     console.log(char);
+// }
+let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+            'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+let direction = prompt("Type 'encode' to encrypt, type 'decode' to decrypt: ")
+let text = prompt("Type your message: ").toLocaleLowerCase()
+let shift = prompt("Type the shift number: ")
+
+// To-do 1
+function encrypt(shift, text) {
+    // Define the alphabet
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    // Convert text to lowercase
+    const lowercaseText = text.toLowerCase();
+
+    let encryptedText = '';
+
+    for (let i = 0; i < lowercaseText.length; i++) {
+        const currentChar = lowercaseText[i];
+
+        // Check if the character is a letter
+        const isLetter = /[a-z]/.test(currentChar);
+
+        if (isLetter) {
+            // Find the index of the current character in the alphabet
+            const currentIndex = alphabet.indexOf(currentChar);
+
+            // Calculate the shifted index
+            let shiftedIndex = (currentIndex + shift) % 26;
+            if (shiftedIndex < 0) {
+                // Handle negative shifts
+                shiftedIndex += 26;
+            }
+
+            // Add the encrypted character to the result
+            encryptedText += alphabet[shiftedIndex];
+        } else {
+            // If the character is not a letter, add it unchanged
+            encryptedText += currentChar;
+        }
+    }
+
+    console.log(`Encrypted text: ${encryptedText}`);
 }
-const Str = "Sweden"
-for (const char of Str) {
-    console.log(char);
-}
+
+encrypt(shift, text);
