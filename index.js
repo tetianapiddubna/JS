@@ -192,12 +192,19 @@
 // }
 
 // encrypt(shift, text);
-let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
-            'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+let direction;
+while (true) {
+    direction = prompt("Type 'encode' to encrypt, type 'decode' to decrypt: ");
+    if (direction === 'encrypt' || direction === 'decrypt') {
+        break; // Break the loop if a valid direction is provided
+    } else {
+        console.log("Invalid direction. Please type 'encrypt' or 'decrypt'.");
+    }
+}
 
-let direction = prompt("Type 'encode' to encrypt, type 'decode' to decrypt: ")
-let text = prompt("Type your message: ").toLocaleLowerCase()
-let shift = prompt("Type the shift number: ")
+let text = prompt("Type your message: ").toLocaleLowerCase();
+let shift = prompt("Type the shift number: ");
+
 function encryptDecrypt(shift, text, direction) {
     // Define the alphabet
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -210,7 +217,7 @@ function encryptDecrypt(shift, text, direction) {
     for (let i = 0; i < lowercaseText.length; i++) {
         const currentChar = lowercaseText[i];
 
-        // Check if the character is a letter
+        // Check if the character is a letter!
         const isLetter = /[a-z]/.test(currentChar);
 
         if (isLetter) {
@@ -240,9 +247,5 @@ function encryptDecrypt(shift, text, direction) {
     return result;
 }
 
-if (direction === 'encrypt' || direction === 'decrypt') {
-    const result = encryptDecrypt(shift, text, direction);
-    console.log(`Result: ${result}`);
-} else {
-    console.log("Invalid direction. Please type 'encrypt' or 'decrypt'.");
-}
+const result = encryptDecrypt(shift, text, direction);
+console.log(`Result: ${result}`);
